@@ -1,0 +1,15 @@
+version: '3.8'
+
+# Define o serviço da aplicação que será executado no container
+services:
+  app:
+    # Constrói a imagem do Docker usando o Dockerfile localizado no diretório atual
+    build: .
+    # Define o nome do container
+    container_name: alura-app
+    # Mapeia a porta 8000 do host para a porta 8000 do container
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual no container, permitindo que as alterações sejam refletidas em tempo real
+    volumes:
+      - .:/app
