@@ -1,4 +1,4 @@
-FROM python:3.12-slim-buster
+FROM python:3.13.4-alpine3.22
 
 # Define o diretório de trablho dentro do container
 WORKDIR /app
@@ -18,5 +18,4 @@ EXPOSE 8000
 
 # Comando para iniciar a aplicação usando Uvicorn
 # o host 0.0.0.0 permite que a aplicação seja acessada de fora do container
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
-
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
